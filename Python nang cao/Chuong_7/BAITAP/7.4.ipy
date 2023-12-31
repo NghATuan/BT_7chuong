@@ -1,0 +1,43 @@
+import tkinter as tk
+
+def submit_info():
+    student_name = entry_name.get()
+    student_id = entry_id.get()
+    password = entry_password.get()
+
+    # In thông tin hoặc thực hiện các thao tác khác tại đây
+    print("Student Name:", student_name)
+    print("Student ID:", student_id)
+    print("Password:", password)
+
+# Tạo cửa sổ chính
+root = tk.Tk()
+root.title("Student Information Form")
+
+# Tạo các hộp văn bản và nhãn
+label_name = tk.Label(root, text="Student Name:")
+entry_name = tk.Entry(root)
+
+label_id = tk.Label(root, text="Student ID:")
+entry_id = tk.Entry(root)
+
+label_password = tk.Label(root, text="Password:")
+entry_password = tk.Entry(root, show="*")  # show="*" để ẩn mật khẩu
+
+# Tạo nút Gửi
+submit_button = tk.Button(root, text="Submit", command=submit_info)
+
+# Sắp xếp các thành phần trong cửa sổ
+label_name.grid(row=0, column=0, padx=10, pady=10, sticky=tk.E)
+entry_name.grid(row=0, column=1, padx=10, pady=10)
+
+label_id.grid(row=1, column=0, padx=10, pady=10, sticky=tk.E)
+entry_id.grid(row=1, column=1, padx=10, pady=10)
+
+label_password.grid(row=2, column=0, padx=10, pady=10, sticky=tk.E)
+entry_password.grid(row=2, column=1, padx=10, pady=10)
+
+submit_button.grid(row=3, column=1, pady=20)
+
+# Chạy vòng lặp chính của Tkinter
+root.mainloop()
